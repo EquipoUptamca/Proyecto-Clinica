@@ -12,6 +12,10 @@ def get_db_connection():
                 'Trusted_Connection=yes;'
             )
         else:
+            if not USERNAME or not PASSWORD:
+                logging.error("Credenciales de base de datos no configuradas")
+                return None
+                
             connection_string = (
                 f'DRIVER={{ODBC Driver 17 for SQL Server}};'
                 f'SERVER={SERVER};DATABASE={DATABASE};'

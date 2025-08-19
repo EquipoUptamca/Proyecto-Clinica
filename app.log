@@ -28,3 +28,116 @@
 2025-06-11 13:48:03,672 - root - INFO - Database connection established successfully
 2025-06-11 13:48:03,678 - werkzeug - INFO - 127.0.0.1 - - [11/Jun/2025 13:48:03] "[31m[1mPUT /api/horarios/12 HTTP/1.1[0m" 400 -
 2025-06-11 13:50:58,257 - werkzeug - INFO -  * Detected change in 'c:\\Users\\YepBuddy2\\Desktop\\el-paso\\schedules.py', reloading
+2025-08-19 19:01:25,561 - root - INFO - Iniciando aplicación Flask...
+2025-08-19 19:01:25,802 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.108:5000
+2025-08-19 19:01:25,803 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-19 19:01:25,805 - werkzeug - INFO -  * Restarting with stat
+2025-08-19 19:01:26,959 - root - INFO - Iniciando aplicación Flask...
+2025-08-19 19:01:27,007 - werkzeug - WARNING -  * Debugger is active!
+2025-08-19 19:01:27,013 - werkzeug - INFO -  * Debugger PIN: 304-556-351
+2025-08-19 19:01:43,583 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:43] "GET / HTTP/1.1" 200 -
+2025-08-19 19:01:44,561 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:44] "GET /static/js/index.js HTTP/1.1" 200 -
+2025-08-19 19:01:44,569 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:44] "GET /static/css/index.css HTTP/1.1" 200 -
+2025-08-19 19:01:45,323 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-19 19:01:59,156 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:59] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:01:59,244 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:59] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:01:59,262 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:01:59] "GET /static/js/login.js HTTP/1.1" 200 -
+2025-08-19 19:02:11,776 - root - INFO - Database connection established successfully
+2025-08-19 19:02:13,084 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:02:13] "POST /api/login HTTP/1.1" 200 -
+2025-08-19 19:02:14,662 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:02:14] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:02:14,822 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:02:14] "GET /static/css/doctor_dashboard.css HTTP/1.1" 200 -
+2025-08-19 19:02:14,936 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:02:14] "[33mGET /api/doctor/stats HTTP/1.1[0m" 404 -
+2025-08-19 19:02:14,956 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:02:14] "[33mGET /api/doctor/appointments/today HTTP/1.1[0m" 404 -
+2025-08-19 19:03:55,159 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:03:55] "GET / HTTP/1.1" 200 -
+2025-08-19 19:03:55,215 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:03:55] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+2025-08-19 19:03:55,215 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:03:55] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:03:55,218 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:03:55] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+2025-08-19 19:05:39,353 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "GET / HTTP/1.1" 200 -
+2025-08-19 19:05:39,371 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "GET /static/css/index.css HTTP/1.1" 200 -
+2025-08-19 19:05:39,373 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:05:39,380 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "GET /static/js/index.js HTTP/1.1" 200 -
+2025-08-19 19:05:39,470 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "[33mGET /static/img/avatars/doctor1.jpg HTTP/1.1[0m" 404 -
+2025-08-19 19:05:39,471 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "[33mGET /static/img/avatars/doctor2.jpg HTTP/1.1[0m" 404 -
+2025-08-19 19:05:39,475 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "[33mGET /static/img/avatars/admin1.jpg HTTP/1.1[0m" 404 -
+2025-08-19 19:05:39,582 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:39] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:05:45,977 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:45] "GET /register HTTP/1.1" 200 -
+2025-08-19 19:05:46,056 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:46] "[36mGET /static/css/register.css HTTP/1.1[0m" 304 -
+2025-08-19 19:05:46,099 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:05:46] "[36mGET /static/js/register.js HTTP/1.1[0m" 304 -
+2025-08-19 19:08:25,839 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:25] "GET /register HTTP/1.1" 200 -
+2025-08-19 19:08:25,888 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:25] "[36mGET /static/css/register.css HTTP/1.1[0m" 304 -
+2025-08-19 19:08:25,889 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:25] "[36mGET /static/js/register.js HTTP/1.1[0m" 304 -
+2025-08-19 19:08:27,458 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:27] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:08:27,522 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:27] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:08:27,523 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:27] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:08:30,720 - root - INFO - Database connection established successfully
+2025-08-19 19:08:31,882 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:31] "POST /api/login HTTP/1.1" 200 -
+2025-08-19 19:08:33,423 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:33] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:08:33,461 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:33] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:08:33,522 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:33] "[33mGET /api/doctor/stats HTTP/1.1[0m" 404 -
+2025-08-19 19:08:33,524 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:33] "[33mGET /api/doctor/appointments/today HTTP/1.1[0m" 404 -
+2025-08-19 19:08:43,341 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:43] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:08:43,386 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:43] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:08:43,387 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:08:43] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:14:50,570 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:14:50] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:14:50,587 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:14:50] "GET /static/css/doctor_dashboard.css HTTP/1.1" 200 -
+2025-08-19 19:14:50,803 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:14:50] "[33mGET /api/doctor/stats HTTP/1.1[0m" 404 -
+2025-08-19 19:14:50,804 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:14:50] "[33mGET /api/doctor/appointments/today HTTP/1.1[0m" 404 -
+2025-08-19 19:14:50,811 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:14:50] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:16:06,853 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:16:06] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:16:06,898 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:16:06] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:16:06,927 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:16:06] "GET /static/js/doctor_dashboard.js HTTP/1.1" 200 -
+2025-08-19 19:16:07,158 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:16:07] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:21:27,967 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:27] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:21:27,993 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:27] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:21:27,994 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:27] "[36mGET /static/js/doctor_dashboard.js HTTP/1.1[0m" 304 -
+2025-08-19 19:21:28,067 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:28] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:21:30,509 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:30] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:21:30,587 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:30] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:21:30,588 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:21:30] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:22:15,686 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:15] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:22:15,711 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:15] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:22:17,844 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:17] "GET /static/js/doctor_dashboard.js HTTP/1.1" 200 -
+2025-08-19 19:22:17,865 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:17] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:22:17,911 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:17] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:22:17,912 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:17] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:22:17,962 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:17] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:22:22,249 - root - INFO - Database connection established successfully
+2025-08-19 19:22:23,424 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:23] "POST /api/login HTTP/1.1" 200 -
+2025-08-19 19:22:24,949 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:24] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:22:24,983 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:24] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:22:24,984 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:24] "[36mGET /static/js/doctor_dashboard.js HTTP/1.1[0m" 304 -
+2025-08-19 19:22:25,022 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:25] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:22:25,072 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:25] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:22:25,073 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:22:25] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:24:05,937 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:05] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:24:05,958 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:05] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:24:05,959 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:05] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:24:05,985 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:05] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:24:10,339 - root - INFO - Database connection established successfully
+2025-08-19 19:24:11,479 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:11] "POST /api/login HTTP/1.1" 200 -
+2025-08-19 19:24:13,014 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:13] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:24:13,039 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:13] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:24:13,039 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:24:13] "GET /static/js/doctor_dashboard.js HTTP/1.1" 200 -
+2025-08-19 19:25:19,445 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:25:19,489 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:25:19,492 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "GET /static/js/doctor_dashboard.js HTTP/1.1" 200 -
+2025-08-19 19:25:19,554 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:25:19,592 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:25:19,593 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:25:19,613 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:19] "[36mGET /static/img/Logo.webp HTTP/1.1[0m" 304 -
+2025-08-19 19:25:22,708 - root - INFO - Database connection established successfully
+2025-08-19 19:25:23,822 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:23] "POST /api/login HTTP/1.1" 200 -
+2025-08-19 19:25:25,346 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:25] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:25:25,372 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:25] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:25:25,380 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:25] "[36mGET /static/js/doctor_dashboard.js HTTP/1.1[0m" 304 -
+2025-08-19 19:25:25,470 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:25] "GET /login HTTP/1.1" 200 -
+2025-08-19 19:25:25,495 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:25] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-08-19 19:25:25,496 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:25:25] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2025-08-19 19:26:00,083 - root - INFO - Database connection established successfully
+2025-08-19 19:26:01,211 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:26:01] "POST /api/login HTTP/1.1" 200 -
+2025-08-19 19:26:02,750 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:26:02] "GET /doctor_dashboard HTTP/1.1" 200 -
+2025-08-19 19:26:02,776 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:26:02] "[36mGET /static/css/doctor_dashboard.css HTTP/1.1[0m" 304 -
+2025-08-19 19:26:02,780 - werkzeug - INFO - 127.0.0.1 - - [19/Aug/2025 19:26:02] "GET /static/js/doctor_dashboard.js HTTP/1.1" 200 -
