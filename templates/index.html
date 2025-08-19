@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plataforma de gestión médica del Centro Médico Docente El Paso" />
+  <meta name="keywords" content="gestión médica, citas médicas, historiales electrónicos, centro médico">
+  <meta name="author" content="Centro Médico Docente El Paso">
+  <title>MedAsistencia - Centro Médico Docente El Paso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/Logo.webp') }}" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <button id="registerBtn" title="Registrar" aria-label="Registrarse" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 0 0 0 256zm89.6 32h-11.2a174.74 174.74 0 0 1-156.8 0h-11.2A134.88 134.88 0 0 0 0 422.4V464a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48v-41.6a134.88 134.88 0 0 0-134.4-134.4zM624 176h-48v-48a16 16 0 0 0-32 0v48h-48a16 16 0 0 0 0 32h48v48a16 16 0 0 0 32 0v-48h48a16 16 0 0 0 0-32z"/></svg>
+        Registrar
+      </button>
+      <button id="loginBtn" title="Login" aria-label="Iniciar sesión" class="btn-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M192 128v-32A32 32 0 0 0 160 64H48A48 48 0 0 0 0 112v288a48 48 0 0 0 48 48h112a32 32 0 0 0 32-32v-32h-48v32H48V112h112v32a32 32 0 0 0 32 32h48v32l64-64-64-64v32zm176 112H224v64h144a24 24 0 0 1 0 48H224v64l-96-96 96-96v64h144a24 24 0 0 1 0 48z"/></svg>
+        Login
+      </button>
+    </div>
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="{{ url_for('static', filename='img/Logo.webp') }}" alt="Logo MedAsistencia" class="logo">
+      </div>
+      <h1>MedAsistencia</h1>
+      <p>Centro Médico Docente El Paso</p>
+    </div>
+  </header>
+  
+  <main>
+    <div class="content-container">
+      <h2>Plataforma de Gestión Integral para el Personal Médico</h2>
+      <p>MedAsistencia está orientada a fortalecer los procesos de planificación médica y apoyo organizacional del Centro Médico Docente El Paso, institución reconocida por su excelencia en la atención y profesionalismo de su equipo médico.</p>
+      
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg>
+          </div>
+          <h3>Acceso Seguro</h3>
+          <p>Sistema de autenticación con roles diferenciados para administradores, médicos y pacientes, garantizando la confidencialidad de los datos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V80zM0 272c0-26.5 21.5-48 48-48H80c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V272zM368 96h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"/></svg>
+          </div>
+          <h3>Gestión Completa</h3>
+          <p>Control integral de citas, historiales médicos electrónicos y seguimiento de pacientes en una plataforma unificada y fácil de usar.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"/></svg>
+          </div>
+          <h3>Reportes Inteligentes</h3>
+          <p>Generación automática de reportes clínicos y estadísticas operativas para una mejor toma de decisiones basada en datos.</p>
+        </div>
+      </div>
+      
+      <div class="testimonials">
+        <h3>Lo que dicen nuestros profesionales</h3>
+        <div class="testimonial-slider">
+          <!-- Los testimonios se cargarán dinámicamente desde JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <p>Av. Principal, El Paso</p>
+        <p>Teléfono: +123 456 7890</p>
+        <p>Email: contacto@medasistencia.com</p>
+      </div>
+      <div class="footer-section">
+        <h4>Horario</h4>
+        <p>Lunes a Viernes: 8:00 - 18:00</p>
+        <p>Sábados: 9:00 - 13:00</p>
+      </div>
+      <div class="footer-section">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="/privacy">Política de Privacidad</a></li>
+          <li><a href="/terms">Términos de Servicio</a></li>
+          <li><a href="/faq">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Centro Médico Docente El Paso - Todos los derechos reservados</p>
+      <p>MedAsistencia v2.1</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

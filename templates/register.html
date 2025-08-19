@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sistema Clínico</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo.webp') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <h2><i class="fas fa-user-plus" style="margin-right: 10px;"></i>Registro de Personal</h2>
+            <p>Complete el formulario para acceder al sistema clínico</p>
+        </div>
+        
+        <div class="register-body">
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <label for="nombre_completo"><i class="fas fa-user" style="margin-right: 8px;"></i>Nombre Completo</label>
+                    <input type="text" id="nombre_completo" name="nombre_completo" required minlength="5" 
+                           placeholder="Ej: Dra. María González Pérez">
+                    <div class="error-message" id="nombre_error"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1; margin-right: 15px;">
+                        <label for="usuario_login"><i class="fas fa-at" style="margin-right: 8px;"></i>Usuario</label>
+                        <input type="text" id="usuario_login" name="usuario_login" required minlength="4"
+                               placeholder="Ej: mgonzalez">
+                        <div class="error-message" id="usuario_error"></div>
+                    </div>
+                    
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cedula"><i class="fas fa-id-card" style="margin-right: 8px;"></i>Cédula</label>
+                        <input type="text" id="cedula" name="cedula" required minlength="8" maxlength="8"
+                               placeholder="Ej: 1234567890" pattern="\d{8}">
+                        <div class="error-message" id="cedula_error"></div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1; margin-right: 15px;">
+                        <label for="telefono"><i class="fas fa-phone" style="margin-right: 8px;"></i>Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" 
+                               placeholder="Ej: 0991234567" pattern="[0-9]{7,12}">
+                        <div class="error-message" id="telefono_error"></div>
+                    </div>
+                    
+                    <div class="form-group" style="flex: 1;">
+                        <label for="gmail"><i class="fas fa-envelope" style="margin-right: 8px;"></i>Correo</label>
+                        <input type="email" id="gmail" name="gmail" 
+                               placeholder="Ej: usuario@clinica.com">
+                        <div class="error-message" id="gmail_error"></div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1; margin-right: 15px;">
+                        <label for="contraseña"><i class="fas fa-lock" style="margin-right: 8px;"></i>Contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="contraseña" name="contraseña" required minlength="8"
+                                   placeholder="Mínimo 8 caracteres">
+                            <span class="toggle-password" id="togglePassword">Mostrar</span>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-meter" id="passwordStrength"></div>
+                        </div>
+                        <span class="hint-text">Use mayúsculas, números y símbolos para mayor seguridad</span>
+                        <div class="error-message" id="password_error"></div>
+                    </div>
+                    
+                    <div class="form-group" style="flex: 1;">
+                        <label for="confirm_password"><i class="fas fa-lock" style="margin-right: 8px;"></i>Confirmar</label>
+                        <div class="password-container">
+                            <input type="password" id="confirm_password" name="confirm_password" required
+                                   placeholder="Repita su contraseña">
+                            <span class="toggle-password" id="toggleConfirmPassword">Mostrar</span>
+                        </div>
+                        <div class="error-message" id="confirm_error"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_rol"><i class="fas fa-user-tag" style="margin-right: 8px;"></i>Rol</label>
+                    <select id="id_rol" name="id_rol" required>
+                        <option value="" disabled selected>Seleccione su rol</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Médico Residente</option>
+                        <option value="3">Especialista</option>
+                        <option value="4">Enfermería</option>
+                        <option value="5">Recepción</option>
+                    </select>
+                    <div class="role-description" id="roleDescription"></div>
+                    <div class="error-message" id="rol_error"></div>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <span id="btn-text">Registrarse</span>
+                </button>
+            </form>
+            
+            <div id="message" class="message"></div>
+            
+            <div class="login-link">
+                ¿Ya tiene una cuenta? <a href="/login">Inicie sesión aquí</a>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+    <style>
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.75rem;
+        }
+        
+        @media (max-width: 640px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .form-row .form-group {
+                margin-right: 0 !important;
+                margin-bottom: 1.75rem;
+            }
+            
+            .form-row .form-group:last-child {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</body>
+</html>
