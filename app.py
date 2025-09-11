@@ -3,6 +3,7 @@ import logging
 import os
 from flask_cors import CORS
 
+
 # Import blueprints
 from views import views_bp
 from auth import auth_bp
@@ -40,7 +41,6 @@ def create_app():
     app.register_blueprint(patients_bp)
     app.register_blueprint(appointments_bp)
     app.register_blueprint(schedules_bp)
-    
     
     return app
 

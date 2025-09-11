@@ -480,12 +480,15 @@ $(document).ready(function() {
                     $(this).removeClass('is-invalid');
                 }
             });
-
+            
+            //comente en forma de prueba no finciona las pociones de "estado" ni "tipo de sangre en caso de estar activo"
             // Inicializar Select2 para los selects
-            $('.form-select').select2({
-                dropdownParent: $('#pacienteModal'),
-                width: '100%',
-                theme: 'bootstrap-5'
+            $('#pacienteModal').on('shown.bs.modal', function () {
+                $('#tipo_sangre').select2('destroy').select2({
+                    dropdownParent: $('#pacienteModal'),
+                    width: '100%',
+                    theme: 'bootstrap-5'
+                });
             });
 
             // Cargar datos iniciales

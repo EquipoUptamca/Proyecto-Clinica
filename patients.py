@@ -76,12 +76,18 @@ def get_pacientes_detallados():
                 params.extend([search_term, search_term, search_term, search_term])
             
             if fecha_desde:
+                # Agregar componente de tiempo para incluir todo el día desde el inicio en el filtro fecha_desde
+                fecha_desde_dt = datetime.strptime(fecha_desde, '%Y-%m-%d')
+                fecha_desde_dt = fecha_desde_dt.replace(hour=0, minute=0, second=0)
                 query += " AND fecha_creacion >= ?"
-                params.append(fecha_desde)
+                params.append(fecha_desde_dt)
             
             if fecha_hasta:
+                # Agregar componente de tiempo para incluir todo el día en el filtro fecha_hasta
+                fecha_hasta_dt = datetime.strptime(fecha_hasta, '%Y-%m-%d')
+                fecha_hasta_dt = fecha_hasta_dt.replace(hour=23, minute=59, second=59)
                 query += " AND fecha_creacion <= ?"
-                params.append(fecha_hasta)
+                params.append(fecha_hasta_dt)
 
             query += " ORDER BY nombre_completo"
 

@@ -29,22 +29,22 @@ $(document).ready(function() {
                     },
                     columns: [
                         { data: 'id_medico', className: 'fw-bold' },
-                        { 
+                        {
                             data: 'nombre_completo',
                             render: function(data, type, row) {
                                 return `<span class="fw-semibold">${data}</span>`;
                             }
                         },
                         { data: 'especialidad' },
-                        { 
+                        {
                             data: 'telefono',
                             render: data => data ? `<a href="tel:${data}">${data}</a>` : '<span class="text-muted">No registrado</span>'
                         },
-                        { 
+                        {
                             data: 'correo',
                             render: data => data ? `<a href="mailto:${data}">${data}</a>` : '<span class="text-muted">No registrado</span>'
                         },
-                        { 
+                        {
                             data: 'estado',
                             render: function(data) {
                                 const badgeClass = data === 'A' ? 'badge-active' : 'badge-inactive';
@@ -80,6 +80,40 @@ $(document).ready(function() {
                     responsive: true,
                     order: [[1, 'asc']],
                     dom: '<"top"<"row"<"col-md-6"l><"col-md-6"f>>>rt<"bottom"<"row"<"col-md-6"i><"col-md-6"p>>>',
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            text: '<i class="fas fa-file-excel"></i> Excel',
+                            title: 'Lista de Médicos',
+                            className: 'btn btn-success btn-sm',
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5] // Excluir columna de acciones
+                            }
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            text: '<i class="fas fa-file-pdf"></i> PDF',
+                            title: 'Lista de Médicos',
+                            className: 'btn btn-danger btn-sm',
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5] // Excluir columna de acciones
+                            },
+                            customize: function(doc) {
+                                doc.content.splice(0, 0, {
+                                    text: 'Sistema de Gestión de Clínica',
+                                    fontSize: 16,
+                                    alignment: 'center',
+                                    margin: [0, 0, 0, 20]
+                                });
+                                doc.content.splice(1, 0, {
+                                    text: 'Lista de Médicos',
+                                    fontSize: 14,
+                                    alignment: 'center',
+                                    margin: [0, 0, 0, 15]
+                                });
+                            }
+                        }
+                    ],
                     initComplete: function() {
                         $('.dataTables_filter input').addClass('form-control');
                         $('.dataTables_length select').addClass('form-select');
@@ -96,15 +130,31 @@ $(document).ready(function() {
             // 3. Configurar filtros para DataTable
             const setupFilters = (table) => {
                 $('#filterEspecialidad').change(function() {
-                    table.column(2).search(this.value).draw();
+                    const value = this.value;
+                    if (value === '') {
+                        table.column(2).search('').draw();
+                    } else {
+                        table.column(2).search(value, false, true, true).draw(); // Case insensitive
+                    }
                 });
 
                 $('#filterEstado').change(function() {
-                    table.column(5).search(this.value).draw();
+                    const value = this.value;
+                    if (value === '') {
+                        table.column(5).search('').draw();
+                    } else if (value === 'A') {
+                        // Filter for active by searching exact rendered text 'Activo' with regex
+                        table.column(5).search('^Activo$', true, false).draw();
+                    } else if (value === 'I') {
+                        // Filter for inactive by searching rendered text 'Inactivo'
+                        table.column(5).search('Inactivo', false, true, true).draw();
+                    } else {
+                        table.column(5).search(value, false, true, true).draw(); // Case insensitive fallback
+                    }
                 });
 
                 $('#filterSearch').keyup(function() {
-                    table.search(this.value).draw();
+                    table.search(this.value, false, true, true).draw(); // Case insensitive
                 });
 
                 $('#btnClearFilters').click(function() {
@@ -263,7 +313,7 @@ $(document).ready(function() {
         }
         
         console.log('Redirigiendo a horarios.html con ID:', id);
-        window.location.href = `horarios.html?id=${encodeURIComponent(id)}`;
+        window.location.href = `/horarios?id=${encodeURIComponent(id)}`;
     });
 
                 // Seleccionar fila
@@ -296,13 +346,12 @@ $(document).ready(function() {
             const setupExport = (table) => {
                 $('#exportExcel').click(function(e) {
                     e.preventDefault();
-                    table.button('.buttons-excel').trigger();
+                    table.button(0).trigger(); // Trigger Excel button (index 0)
                 });
 
                 $('#exportPDF').click(function(e) {
                     e.preventDefault();
-                    // Aquí iría la lógica para exportar a PDF
-                    showAlert('Exportación a PDF no implementada aún', 'info');
+                    table.button(1).trigger(); // Trigger PDF button (index 1)
                 });
             };
 

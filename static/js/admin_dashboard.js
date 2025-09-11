@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             icon: 'users', 
                             count: stats.users, 
                             label: 'Usuarios',
-                            link: '/usuarios',
+                            link: '/users',
                             color: 'warning'
                         }
                     ];

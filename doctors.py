@@ -266,54 +266,64 @@ def update_medico(id_medico):
         conn.close()
 
 @doctors_bp.route('/api/medicos/<int:id_medico>', methods=['DELETE'])
-def delete_medico(id_medico):
+def toggle_medico_status(id_medico):
     conn = get_db_connection()
     if not conn:
         return jsonify({'error': 'Error de conexión a la base de datos'}), 500
-        
+
     try:
         with conn.cursor() as cursor:
-            # Verificar citas programadas
+            # Obtener el estado actual del médico
             cursor.execute("""
-                SELECT 1 FROM citas WHERE id_medico = ? AND fecha_cita >= CAST(GETDATE() AS DATE)
+                SELECT estado FROM medicos WHERE id_medico = ?
             """, (id_medico,))
-            
-            if cursor.fetchone():
-                return jsonify({
-                    'error': 'No se puede eliminar el médico porque tiene citas programadas'
-                }), 400
-                
+
+            row = cursor.fetchone()
+            if not row:
+                return jsonify({'error': 'Médico no encontrado'}), 404
+
+            current_status = row[0]
+
+            # Nota: Se permite cambiar el estado independientemente de las citas programadas
+
+            # Toggle del estado
+            new_status = 'I' if current_status == 'A' else 'A'
+            action_text = 'desactivado' if new_status == 'I' else 'activado'
+
             # Verificar si la tabla tiene la columna fecha_actualizacion
             cursor.execute("""
-                SELECT COLUMN_NAME 
-                FROM INFORMATION_SCHEMA.COLUMNS 
+                SELECT COLUMN_NAME
+                FROM INFORMATION_SCHEMA.COLUMNS
                 WHERE TABLE_NAME = 'medicos' AND COLUMN_NAME = 'fecha_actualizacion'
             """)
             tiene_fecha_actualizacion = cursor.fetchone()
-            
+
             if tiene_fecha_actualizacion:
                 cursor.execute("""
                     UPDATE medicos SET
-                        estado = 'I',
+                        estado = ?,
                         fecha_actualizacion = GETDATE()
                     WHERE id_medico = ?
-                """, (id_medico,))
+                """, (new_status, id_medico))
             else:
                 cursor.execute("""
                     UPDATE medicos SET
-                        estado = 'I'
+                        estado = ?
                     WHERE id_medico = ?
-                """, (id_medico,))
-            
+                """, (new_status, id_medico))
+
             if cursor.rowcount == 0:
                 return jsonify({'error': 'Médico no encontrado'}), 404
-                
+
             conn.commit()
-            
-            return jsonify({'message': 'Médico marcado como inactivo exitosamente'})
+
+            return jsonify({
+                'message': f'Médico {action_text} exitosamente',
+                'new_status': new_status
+            })
     except pyodbc.Error as e:
         conn.rollback()
         logging.error(f"Error en base de datos: {str(e)}")
-        return jsonify({'error': 'Error al eliminar médico', 'detalles': str(e)}), 500
+        return jsonify({'error': 'Error al cambiar estado del médico', 'detalles': str(e)}), 500
     finally:
         conn.close()
